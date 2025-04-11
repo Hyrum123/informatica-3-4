@@ -16,11 +16,10 @@ int main() {
     int even;
     printf("\nEnter an integer: ");
     scanf("%d", &even);
-    int check = even%2;
-    if(check == 1) {
-        printf("Your number is odd\n");
+    if(even%2 == 0) {
+        printf("Your number is even\n");
     } else {
-        printf("Your number is even\n\n");
+        printf("Your number is odd\n\n");
     }
 
     //day of the week
@@ -44,15 +43,25 @@ int main() {
     }
 
     //calculator
-    int calc1;
-    int calc2;
-    char operation;
-    printf("Enter an operation (a for addition, s for subtraction, m for multiplication, d for division): ");
-    scanf("%c", &operation);
+    float calc1;
+    float calc2;
+    int operation;
     printf("\nEnter two numbers: \n");
-    scanf("%d %d", &calc1, &calc2);
-    if(operation == 'a') {
-        printf("Hello");
+    scanf("%f %f", &calc1, &calc2);    
+    float add = calc1 + calc2;
+    float sub = calc1 - calc2;
+    float mul = calc1 * calc2;
+    float div = calc1 / calc2;
+    printf("Enter an operation (1 for addition, 2 for subtraction, 3 for multiplication, 4 for division): ");
+    scanf("%d", &operation);
+    if(operation == 1) {
+        printf("%f\n", add);
+    } else if (operation == 2) {
+        printf("%f\n", sub);
+    } else if (operation == 3) {
+        printf("%f\n", mul);
+    } else if (operation == 4) {
+        printf("%f\n", div);
     }
 
 
