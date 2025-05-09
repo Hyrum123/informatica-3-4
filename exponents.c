@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 int main() {
     int base;
@@ -8,7 +9,7 @@ int main() {
     scanf("%d", &base);
     printf("Enter an exponent: ");
     scanf("%d", &exp);
-    printf("Which type of loop do you want (same difference):\n1. While Loop\n2. For Loop\nChoose your option: ");
+    printf("Which type of loop do you want (same difference):\n1. While Loop\n2. For Loop\n3. pow Function\nChoose your option: ");
     scanf("%d", &whichLoop);
     int count = 1;
     long long int result = base;
@@ -17,12 +18,15 @@ int main() {
             result = result * base;
         }
         printf("%lli\n", result);
-    }
-    if(whichLoop == 1) {
+    } else if(whichLoop == 1) {
         while(count < exp) {
             result = result * base;
             count += 1;
         }
         printf("%lli\n", result);
+    } else if(whichLoop == 3) {
+        int printResult = pow(base, exp);
+        printf("%d\n", printResult);
     }
+    
 }
