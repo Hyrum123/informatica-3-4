@@ -1,8 +1,11 @@
 #include <stdio.h>
 
-int planetAge(float a, float p);
+float calculateAge(float a, float p);
 
 int main() {
+    const float planets[] = {0, 0.24, 0.61, 1, 1.88, 11.86, 29.44, 84.01, 164.79};
+    const char* planetNames[] = {"0 Ain't no choice", "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"};
+
     const float mercury = 0.2408467;
     const float venus = 0.61519726;
     const float earth = 1;
@@ -20,14 +23,26 @@ int main() {
     float printResult;
 
     if(planet == 1) {
-        printResult = planetAge(age, mercury);
+        printResult = calculateAge(age, mercury);
     } else if(planet == 2) {
-        printResult = planetAge(age, venus);
+        printResult = calculateAge(age, venus);
+    } else if(planet == 3) {
+        printResult = calculateAge(age, earth);
+    } else if(planet == 4) {
+        printResult = calculateAge(age, mars);
+    } else if(planet == 5) {
+        printResult = calculateAge(age, jupiter);
+    } else if(planet == 6) {
+        printResult = calculateAge(age, saturn);
+    } else if(planet == 7) {
+        printResult = calculateAge(age, uranus);
+    } else if(planet == 8) {
+        printResult = calculateAge(age, neptune);
     }
-    printf("%f\n", printResult);
+    printf("%.2f\n", printResult);
 }
 
-int planetAge(float a, float p) {
-    float result = a * p;
+float calculateAge(float a, float p) {
+    float result = a / p;
     return result;
 }
